@@ -1,0 +1,13 @@
+.adminPanelContainer {display: flex; flex-direction: row; flex-wrap: nowrap; color:#fff;}
+
+.sidebarAdmin {width: 255px; background-color: #161616; min-height: calc(100vh - 40px);}
+.nav {display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center; padding-top: 30px; padding-bottom: 60px;}
+.nav li {margin-bottom: 15px;}
+.nav li a {padding-left: 30px; color: #c7c7c7; text-decoration: none;}
+.navLink {text-align: center;}
+.profilePhoto {}
+.profilePhoto img {height: 100px; width: 100px; border-radius: 100%;}
+.profileName {margin: 15px 0 10px 0; font-size: 12px;}
+.name {margin-bottom: 7px;}
+
+.mainAdminPanel {width: calc(100% - 255px); background-color: #cccccc; min-height: calc(100vh - 40px);}
