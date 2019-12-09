@@ -1,0 +1,16 @@
+.tableContainer {padding: 30px 15px; background-color: #fff;}
+.tableContainer h3 {font-size: 22px; color: #000; margin-bottom: 15px;}
+.searchTable {float: right; margin: 10px 0; border: 1px solid #f1f1f1; padding: 10px; font-size: 14px;}
+table {width:100%; font-size: 14px;}
+table thead {background-color: #857bff; color: #354168;}
+table th {font-weight: bold;}
+table th, table td {vertical-align: middle; padding: 16px 10px;}
+table td {border-top: 1px solid #f3f3f3; color: #212529;}
+
+.tableFooter {display: flex; margin: 20px 0;}
+.tableInfo {padding-top: 10px; color: #737373;}
+.tablePaginator {margin-left: auto;}
+.pagination {display: flex;}
+.paginationButton {}
+.paginationButton a {border:1px solid #f3f3f3; color: #737373; text-decoration: none; padding: 10px; display: block;}
+.paginationButton a:hover, .activePaginationButton {background-color:#857bff; color: #fff !important; border-color: #857bff !important;}

@@ -3,7 +3,7 @@ import userPhoto from "../../img/user-male-icon.png";
 import {NavLink} from "react-router-dom";
 
 const SideBarAdminPanel = (props) => {
-console.log(props);
+
     return (
         <div className="sidebarAdmin">
             <ul className="nav">
