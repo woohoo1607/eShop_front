@@ -12,5 +12,5 @@ table td {border-top: 1px solid #f3f3f3; color: #212529;}
 .tablePaginator {margin-left: auto;}
 .pagination {display: flex;}
 .paginationButton {}
-.paginationButton a {border:1px solid #f3f3f3; color: #737373; text-decoration: none; padding: 10px; display: block;}
-.paginationButton a:hover, .activePaginationButton {background-color:#857bff; color: #fff !important; border-color: #857bff !important;}
+.paginationButton div {border:1px solid #f3f3f3; color: #737373; text-decoration: none; padding: 10px; cursor: pointer;}
+.paginationButton div:hover, .activePaginationButton {background-color:#857bff; color: #fff !important; border-color: #857bff !important;}

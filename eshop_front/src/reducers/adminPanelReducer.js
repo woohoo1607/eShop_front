@@ -80,12 +80,15 @@ export const setCurrentPage = (currentPage) =>
 
 export const getUsersData = (currentPage) => (dispatch) => {
     dispatch(toggleIsFetching(true));
-    userAPI.getUsers()
+    userAPI.getUsers(currentPage)
         .then(response => {
             if (response.status === 1) {
                 dispatch(toggleIsFetching(false));
                 dispatch(setUsersData(response.result));
                 dispatch(setUsersCount(response.count));
+                if (currentPage) {
+                    dispatch(setCurrentPage(currentPage));
+                }
             }
         });
 };

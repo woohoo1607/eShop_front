@@ -1,7 +1,7 @@
 import React from 'react';
 import './AdminPanel.css';
 import SideBarAdminPanel from "./SideBarAdminPanel";
-import UsersTable from "./Tables/UsersTable/UsersTable";
+import UsersTableContainer from "./Tables/UsersTable/UsersTableContainer";
 
 
 const AdminPanel = (props) => {
@@ -12,7 +12,7 @@ const AdminPanel = (props) => {
                                adminPanel = {props.adminPanel}/>
 
             <div className="mainAdminPanel">
-                <UsersTable adminPanel = {props.adminPanel}/>
+                <UsersTableContainer />
             </div>
 
         </div>

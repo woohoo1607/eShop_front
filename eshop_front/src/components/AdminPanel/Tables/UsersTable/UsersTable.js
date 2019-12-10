@@ -1,9 +1,24 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
 import "./UsersTable.css";
 
 const UsersTable = (props) => {
-    console.log(props);
+    let getSN = (cnt, page) => {
+        let result = [];
+        if (cnt===10) {
+            let maxNumber = page*10;
+            for (let i=9; i>=0; i--) {
+                result.push(maxNumber-i);
+            }
+        } else {
+            let maxNumber = (page-1)*10+cnt;
+            for (let i=cnt-1; i>=0; i--) {
+                result.push(maxNumber-i);
+            }
+        }
+        return result;
+    };
+    let usersSerialNumbers = getSN(props.adminPanel.users.usersData.length, props.adminPanel.users.currentPage);
+
     return (
         <div className="tableContainer">
             <h3>Users Table</h3>
@@ -20,31 +35,33 @@ const UsersTable = (props) => {
                     <th>email</th>
                     <th>phone</th>
                     <th>isAdmin</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 {props.adminPanel.users.usersData
-                    .map(user => <tr key={user.id}>
-                        <td></td>
+                    .map((user,i) => <tr key={user.id}>
+                        <td>{usersSerialNumbers[i]}</td>
                         <td>{user.login}</td>
                         <td>{user.firstname}</td>
                         <td>{user.surname}</td>
                         <td>{user.email}</td>
                         <td>{user.phonenumber}</td>
                         <td>{user.isadmin ? "True" : "False"}</td>
+                        <td><button>edit</button><button>delete</button></td>
                     </tr>)}
                 </tbody>
             </table>
             <div className="tableFooter">
                 <div className="tableInfo">
-                    Showing 1 to 10 of {props.adminPanel.users.usersCount} entries
+                    Showing {usersSerialNumbers[0]} to {usersSerialNumbers[props.adminPanel.users.usersData.length-1]} of {props.adminPanel.users.usersCount} entries
                 </div>
                 <div className="tablePaginator">
                     <ul className="pagination">
-                        <li className="paginationButton"><NavLink to="/admin">Previous</NavLink></li>
-                        <li className="paginationButton"><NavLink to="/admin" className="activePaginationButton">1</NavLink></li>
-                        <li className="paginationButton"><NavLink to="/admin">2</NavLink></li>
-                        <li className="paginationButton"><NavLink to="/admin">Next</NavLink></li>
+                        {props.pagination.map(page=> <li key={page} className="paginationButton">
+                            <div key={page} onClick={()=> {props.updateUserData(page)}} className={page===props.adminPanel.users.currentPage ? "activePaginationButton" : ""}>
+                                {page}
+                            </div></li>)}
                     </ul>
                 </div>
             </div>
