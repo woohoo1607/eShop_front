@@ -1,5 +1,6 @@
 import React from 'react';
 import "./UsersTable.css";
+import TableLine from "./TableLine";
 
 const UsersTable = (props) => {
     let getSN = (cnt, page) => {
@@ -40,16 +41,12 @@ const UsersTable = (props) => {
                 </thead>
                 <tbody>
                 {props.adminPanel.users.usersData
-                    .map((user,i) => <tr key={user.id}>
-                        <td>{usersSerialNumbers[i]}</td>
-                        <td>{user.login}</td>
-                        <td>{user.firstname}</td>
-                        <td>{user.surname}</td>
-                        <td>{user.email}</td>
-                        <td>{user.phonenumber}</td>
-                        <td>{user.isadmin ? "True" : "False"}</td>
-                        <td><button>edit</button><button>delete</button></td>
-                    </tr>)}
+                    .map((user,i) => <TableLine key= {user.id} user = {user}
+                                                            i={i}
+                                                            usersSerialNumbers={usersSerialNumbers}
+                                                            activeteEdit = {props.activeteEdit}
+                                                            deactiveteEdit = {props.deactiveteEdit}
+                                                    />)}
                 </tbody>
             </table>
             <div className="tableFooter">

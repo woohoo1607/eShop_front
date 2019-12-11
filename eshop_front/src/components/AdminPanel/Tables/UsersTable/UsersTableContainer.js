@@ -15,7 +15,7 @@ class UsersTableContainer extends React.Component {
         let countPages = Math.ceil(this.props.adminPanel.users.usersCount/10);
         let thisPage = this.props.adminPanel.users.currentPage;
         if (currentPage==="Next") {
-            if (thisPage<=countPages) {
+            if (thisPage<countPages) {
                 this.props.getUsersData(thisPage+1);
             }
         } else if (currentPage==="Previous") {
@@ -27,7 +27,21 @@ class UsersTableContainer extends React.Component {
         }
     };
 
+    state = {
+        isActiveEdit: false         //для запрета активации редактирование двух строк
+    };
 
+    activeteEdit = () => {
+        this.setState( {
+            isActiveEdit: true
+        });
+    };
+
+    deactiveteEdit = () => {
+        this.setState( {
+            isActiveEdit: false
+        });
+    };
 
     addPaginationPagesToArr = (start, end, acc) => {
       if (start>end) {
@@ -56,6 +70,8 @@ class UsersTableContainer extends React.Component {
             <UsersTable adminPanel = {this.props.adminPanel}
                         updateUserData = {this.updateUserData}
                         pagination = {pagination}
+                        activeteEdit={this.activeteEdit}
+                        deactiveteEdit={this.deactiveteEdit}
             />
         )
     }

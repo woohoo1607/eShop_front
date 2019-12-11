@@ -17,16 +17,13 @@ let initialState = {
 const adminPanelReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USERS_DATA:
-        {
-            return {
+            let copyState = {
                 ...state,
-                users: {
-                    usersData: [...action.usersData],
-                    usersCount: state.users.usersCount,
-                    currentPage: state.users.currentPage,
-                    isFetching: state.users.isFetching
-                }
+                users: {...state.users}
             };
+            copyState.users.usersData = action.usersData;
+        {
+            return copyState;
         }
         case SET_USERS_COUNT:
         {
