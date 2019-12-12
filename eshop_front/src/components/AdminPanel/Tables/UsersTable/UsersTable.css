@@ -1,7 +1,7 @@
 .tableContainer {padding: 30px 15px; background-color: #fff;}
 .tableContainer h3 {font-size: 22px; color: #000; margin-bottom: 15px;}
 .searchTable {float: right; margin: 10px 0; border: 1px solid #f1f1f1; padding: 10px; font-size: 14px;}
-table {width:100%; font-size: 14px;}
+table {width:100%; font-size: 14px; position: relative;}
 table thead {background-color: #857bff; color: #354168;}
 table th {font-weight: bold;}
 table th, table td {vertical-align: middle; padding: 16px 10px;}
@@ -21,10 +21,10 @@ table td {border-top: 1px solid #f3f3f3; color: #212529;}
 .paginationButton div {border:1px solid #f3f3f3; color: #737373; text-decoration: none; padding: 10px; cursor: pointer;}
 .paginationButton div:hover, .activePaginationButton {background-color:#857bff; color: #fff !important; border-color: #857bff !important;}
 
-.editTableLine {width: 700px; height: 700px; position: fixed; top: 50%; left: 50%; background-color: #cccccc; margin: -350px 0 0 -350px; padding: 30px;}
-.editTableLineContainer {background-color: #fff; height: 640px; padding-top: 30px;}
+.editTableLine {width: 500px; position: absolute; background-color: #cccccc; top: 7%; left: 50%; margin-left: -250px; padding: 30px;}
+.editTableLineContainer {background-color: #fff; padding-top: 30px;}
 .inputContainer {margin: 15px;}
-.buttonsContainer {text-align: center; margin-top: 30px;}
+.buttonsContainer {text-align: center; margin-top: 30px; padding-bottom: 30px;}
 .inputName {margin-bottom: 5px; font-weight: bold; font-size: 16px; color: #212529;}
 .editTableLine h3 {text-align: center; color: #000;}
 .editTableLine input {font-size: 18px;}

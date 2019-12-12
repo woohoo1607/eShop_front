@@ -46,6 +46,7 @@ const UsersTable = (props) => {
                                                             usersSerialNumbers={usersSerialNumbers}
                                                             activeteEdit = {props.activeteEdit}
                                                             deactiveteEdit = {props.deactiveteEdit}
+                                                            isActiveEdit = {props.isActiveEdit}
                                                     />)}
                 </tbody>
             </table>

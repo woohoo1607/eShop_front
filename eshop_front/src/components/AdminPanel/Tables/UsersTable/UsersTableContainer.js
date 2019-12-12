@@ -72,6 +72,7 @@ class UsersTableContainer extends React.Component {
                         pagination = {pagination}
                         activeteEdit={this.activeteEdit}
                         deactiveteEdit={this.deactiveteEdit}
+                        isActiveEdit={this.state.isActiveEdit}
             />
         )
     }
